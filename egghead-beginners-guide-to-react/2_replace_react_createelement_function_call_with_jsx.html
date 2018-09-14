@@ -1,0 +1,31 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script type="text/babel">
+const rootElement = document.getElementById(
+  'root',
+)
+// <!-- createElement api -->
+// const element = React.createElement('div', {
+//   className: 'container',
+//   children: 'Hello World',
+// })
+// <!-- basic JSX -->
+// const element = <div className="container">Hello world JSX</div>
+// <!-- {JSX is these braces (its just javascript)} -->
+
+// extracting things to variables is good!
+const content = 'Hello World inside JSX'
+const myClassName = 'container'
+const props = {
+  className: 'container',
+  children: 'Hello World in prop destructuring',
+}
+// const element = <div className={myClassName}>{content}</div>
+// prop destructuring
+const element = <div {...props} />
+ReactDOM.render(element, rootElement)
+</script>
+</body>

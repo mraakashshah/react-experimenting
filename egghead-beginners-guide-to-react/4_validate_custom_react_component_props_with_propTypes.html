@@ -1,0 +1,41 @@
+<body>
+  <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/prop-types@15.6.0/prop-types.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function SayHello(props) {
+      return (
+      <div>
+        heya {props.firstName} {props.lastName}!
+      </div>
+      )
+    }
+
+    // self declared proptypes
+    // const PropTypes = {
+    //   string(props,propName,componentName) {
+    //     if (typeof props[propName] !== 'string') {
+    //       return new Error(
+    //       `Expected a string for ${propName} in ${componentName}, received a ${typeof props[propName]}`
+    //       )
+    //     }
+    //   }
+    // }
+    // SayHello.propTypes = {
+    //   firstName: PropTypes.string,
+    //   lastName: PropTypes.string,
+    // }
+
+    SayHello.propTypes = {
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+    }
+    ReactDOM.render(
+    <SayHello firstName={'dank'} lastName={'issimo'} />,
+    document.getElementById('root')
+    )
+      </script>
+</body>

@@ -1,0 +1,38 @@
+<!-- START -->
+
+<!-- <body>
+  <div id="root" />
+  <script type="text/javascript">
+    // get the root div
+    const rootElement = document.getElementById('root')
+    // create a basic div
+    const element = document.createElement('div')
+    element.textContent = 'Mahalo Earthball'
+    element.className = 'container'
+    rootElement.appendChild(element)
+  </script>
+</body> -->
+
+
+<!-- Do it with React (script tag React_) -->
+
+<body>
+  <div id="root" />
+  <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+  <script type="text/javascript">
+    // get the root div
+    const rootElement = document.getElementById('root')
+    // create a basic div
+    // const element = React.createElement(
+    //   'div',
+    //   { className: 'container' },
+    //   'React to Hello World'
+    // )
+    const element = React.createElement('div', {
+      className: 'container',
+      children: 'Children inside the Hello World',
+    })
+    ReactDOM.render(element, rootElement)
+  </script>
+</body>

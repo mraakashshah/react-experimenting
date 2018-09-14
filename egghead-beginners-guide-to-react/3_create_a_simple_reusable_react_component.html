@@ -1,0 +1,49 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.3.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.3.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script type="text/babel">
+  const rootElement = document.getElementById(
+    'root',
+  )
+
+// JSX
+// const hola = <div>Hola Mundo</div>
+// const element = (
+//   <div className="container">
+//     {hola}
+//     {hola}
+//   </div>
+// )
+
+// JSX with props + functions!
+// const mensaje = (props) => <div>{props.msg}</div>
+// const element = (
+//   <div className="container">
+//     {mensaje({msg:'sup world'})}
+//     {mensaje({msg:'later world'})}
+//   </div>
+// )
+
+// first component!
+// const Mensaje = (props) => <div>{props.msg}</div>
+// const element = (
+//   <Mensaje msg="first component!" />
+// )
+
+// children props can be accessed automatically
+const Message = props => (
+  <div>{props.children}</div>
+)
+const element = (
+  <div className="container">
+    <Message>
+      Hello World
+      <Message>Goodbye World</Message>
+    </Message>
+  </div>
+)
+ReactDOM.render(element, rootElement)
+</script>
+</body>
