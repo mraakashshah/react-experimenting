@@ -15,9 +15,11 @@
       font-family: 'Open Sans', Helvetica, sans-serif;
       margin-bottom: 40px;
     }
+
     .notificationsFrame.show-menu {
       transform: translate3d(150px, 0, 0);
     }
+
     .notificationsFrame .searchInput {
       border: 10px solid red;
       box-sizing: border-box;
@@ -37,21 +39,25 @@
       opacity: 0;
       pointer-events: none;
     }
+
     .notificationsFrame .searchInput:focus {
       outline: none;
     }
+
     .notificationsFrame .searchInput.active {
       -webkit-transform: translateX(0);
       transform: translateX(0);
       opacity: 1;
       pointer-events: all;
     }
+
     .notificationsFrame .header {
       position: relative;
       height: 60px;
       background: #5f98cd;
       padding-top: 0;
     }
+
     .notificationsFrame .header .menuIcon {
       position: absolute;
       width: 29px;
@@ -60,9 +66,13 @@
       left: 20px;
       cursor: pointer;
     }
-    .notificationsFrame .header .menuIcon:hover .dashTop, .notificationsFrame .header .menuIcon:hover .dashBottom, .notificationsFrame .header .menuIcon:hover .circle {
+
+    .notificationsFrame .header .menuIcon:hover .dashTop,
+    .notificationsFrame .header .menuIcon:hover .dashBottom,
+    .notificationsFrame .header .menuIcon:hover .circle {
       background: #fff;
     }
+
     .notificationsFrame .header .menuIcon .dashTop {
       position: absolute;
       width: 20px;
@@ -74,6 +84,7 @@
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
     }
+
     .notificationsFrame .header .menuIcon .dashBottom {
       position: absolute;
       width: 20px;
@@ -88,6 +99,7 @@
       top: auto;
       bottom: 0;
     }
+
     .notificationsFrame .header .menuIcon .circle {
       position: absolute;
       height: 7px;
@@ -99,6 +111,7 @@
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
     }
+
     .notificationsFrame .header .title {
       display: block;
       text-align: center;
@@ -106,6 +119,7 @@
       font-weight: 600;
       font-size: 15px;
     }
+
     .notificationsFrame .header .searchIcon {
       position: absolute;
       z-index: 3;
@@ -117,14 +131,17 @@
       transition: all 0.3s ease;
       cursor: pointer;
     }
+
     .notificationsFrame .header .searchIcon:hover {
       color: #fff;
     }
+
     .notificationsFrame .content {
       position: relative;
       height: 100%;
       overflow: hidden;
     }
+
     .notificationsFrame .content .line {
       position: absolute;
       top: 0;
@@ -133,16 +150,19 @@
       width: 3px;
       background: #ebebeb;
     }
+
     .notificationsFrame .content .item {
       position: relative;
       z-index: 2;
       margin: 20px 30px 30px 70px;
       display: block;
     }
+
     .notificationsFrame .content .item:hover {
       color: #5f98cd;
       cursor: pointer;
     }
+
     .notificationsFrame .content .item .circle {
       box-sizing: border-box;
       position: absolute;
@@ -155,6 +175,7 @@
       top: 0;
       left: -20px;
     }
+
     .notificationsFrame .content .item .avatar {
       position: absolute;
       height: 40px;
@@ -164,6 +185,7 @@
       overflow: hidden;
       left: -49px;
     }
+
     .notificationsFrame .content .item .avatar img {
       width: 100%;
       -webkit-border-radius: 50%;
@@ -175,33 +197,39 @@
       left: 0;
       top: 0;
     }
+
     .notificationsFrame .content .item .time {
       display: block;
       font-size: 11px;
       line-height: 11px;
       margin-bottom: 2px;
     }
+
     .notificationsFrame .content .item p {
       font-size: 15px;
       line-height: 20px;
       margin: 0px 40px 0px 0px;
       font-family: 'Open Sans', Lora, Times, no-serif;
     }
+
     .notificationsFrame .content .item p b {
       font-weight: 600;
     }
+
     .notificationsFrame .content .item .right {
       position: absolute;
       right: 5px;
       font-size: 11px;
       top: 11px;
     }
+
     .notificationsFrame .content .item .commentCount {
       position: absolute;
       right: 15px;
       font-size: 12px;
       top: 11px;
     }
+
     .notificationsFrame .content .item .commentCount:after {
       content: "\f075";
       font-family: FontAwesome;
@@ -213,9 +241,11 @@
       margin-left: 10px;
       z-index: 3;
     }
+
     .notificationsFrame .content .item .commentCount:hover:after {
       color: lightblue;
     }
+
     .notificationsFrame .footer {
       position: relative;
       background: #fff;
@@ -225,6 +255,7 @@
       width: 100%;
       border-radius: 10px;
     }
+
     .notificationsFrame .footer button {
       background: #eee;
       position: absolute;
@@ -235,10 +266,12 @@
       bottom: 0px;
       border: 0;
     }
+
     .notificationsFrame .footer button i {
       margin: 0 10px;
     }
   </style>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
   <!-- Script tags including React -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
