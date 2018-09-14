@@ -138,15 +138,6 @@
       z-index: 2;
       margin: 20px 30px 30px 70px;
       display: block;
-      /*border-radius: 50%;
-      border: 5px solid #ecf0f1;
-      box-sizing: border-box;
-      position: absolute;
-      height: 20px;
-      width: 20px;
-      background: #fff;
-      border: 2px solid #5F98CD;
-      box-shadow: 0 0 0 3px #fff;*/
     }
     .notificationsFrame .content .item:hover {
       color: #5f98cd;
@@ -263,8 +254,8 @@
         return (
         <div className="notificationsFrame">
           <div className="panel">
-            <Header />
-            <Content />
+            <Header title="Timeline" />
+            <Content activity={moment1} />
           </div>
         </div>
         )
@@ -274,22 +265,30 @@
       render() {
         return (
         <div className="header">
-          <div className="fa fa-more"></div>
+          <div className="menuIcon">
+            <div className="dashTop"></div>
+            <div className="dashBottom"></div>
+            <div className="circle"></div>
+          </div>
 
-          <span className="title">Timeline</span>
+          <span className="title">
+            {this.props.title}
+          </span>
 
           <input
           type="text"
           className="searchInput"
           placeholder="Search ..." />
 
-          <div className="fa fa-search searchIcon"></div>
+          <div className="searchIcon"></div>
         </div>
         )
       }
     }
     class Content extends React.Component {
       render() {
+        const {activity} = this.props; // ES6 destructuring
+
         return (
         <div className="content">
           <div className="line"></div>
@@ -298,22 +297,37 @@
           <div className="item">
             <div className="avatar">
               <img
-              alt='Doug'
-              src="http://www.croop.cl/UI/twitter/images/doug.jpg" />
+              alt={activity.text}
+              src={activity.user.avatar} />
+              {activity.user.name}
             </div>
 
             <span className="time">
-              An hour ago
+              {activity.timestamp}
             </span>
-            <p>Ate lunch</p>
+            <p>{activity.text}</p>
+            <div className="commentCount">
+              {activity.comments.length}
+            </div>
           </div>
-
-          {/* ... */}
-
         </div>
         )
       }
     }
+
+    const moment1 = {
+      timestamp: new Date().getTime(),
+      text: "Ate lunch",
+      user: {
+        id: 1,
+        name: 'Nate',
+        avatar: "http://www.croop.cl/UI/twitter/images/doug.jpg"
+      },
+      comments: [
+      { from: 'Ari', text: 'Me too!' }
+      ]
+    }
+
     var mount = document.querySelector('#app');
     ReactDOM.render(<App />, mount);
   </script>
