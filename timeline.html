@@ -288,7 +288,7 @@
         <div className="notificationsFrame">
           <div className="panel">
             <Header title="Timeline" />
-            <Content activity={moment1} />
+            <Content activities={activities} />
           </div>
         </div>
         )
@@ -313,20 +313,34 @@
           className="searchInput"
           placeholder="Search ..." />
 
-          <div className="searchIcon"></div>
+          <div className="fa fa-search searchIcon"></div>
         </div>
         )
       }
     }
     class Content extends React.Component {
       render() {
-        const {activity} = this.props; // ES6 destructuring
+        const {activities} = this.props; // ES6 destructuring
 
         return (
         <div className="content">
           <div className="line"></div>
 
           {/* Timeline item */}
+          {activities.map((activity) => (
+            <ActivityItem
+            activity={activity} />
+            ))}
+
+          </div>
+          )
+        }
+      }
+      class ActivityItem extends React.Component {
+        render() {
+          const {activity} = this.props; // ES6 destructuring
+
+          return (
           <div className="item">
             <div className="avatar">
               <img
@@ -343,27 +357,34 @@
               {activity.comments.length}
             </div>
           </div>
-        </div>
-        )
+          )
+        }
       }
-    }
 
-    const moment1 = {
-      timestamp: new Date().getTime(),
-      text: "Ate lunch",
-      user: {
-        id: 1,
-        name: 'Nate',
-        avatar: "http://www.croop.cl/UI/twitter/images/doug.jpg"
+      const activities = [
+      {
+        timestamp: new Date().getTime(),
+        text: "Ate lunch",
+        user: {
+          id: 1, name: 'Nate',
+          avatar: "http://www.croop.cl/UI/twitter/images/doug.jpg"
+        },
+        comments: [{ from: 'Ari', text: 'Me too!' }]
       },
-      comments: [
-      { from: 'Ari', text: 'Me too!' }
+      {
+        timestamp: new Date().getTime(),
+        text: "Woke up early for a beautiful run",
+        user: {
+          id: 2, name: 'Ari',
+          avatar: "http://www.croop.cl/UI/twitter/images/doug.jpg"
+        },
+        comments: [{ from: 'Nate', text: 'I am so jealous' }]
+      },
       ]
-    }
 
-    var mount = document.querySelector('#app');
-    ReactDOM.render(<App />, mount);
-  </script>
+      var mount = document.querySelector('#app');
+      ReactDOM.render(<App />, mount);
+    </script>
 </body>
 
 </html>
